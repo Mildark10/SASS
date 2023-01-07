@@ -1,0 +1,12 @@
+@use 'variables';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; //no crece de acuerdo al contenido si no a lo q yo customize
+}
+
+body {
+    font-family: variables.$font-body;
+    background-color: variables.$Cream;
+    font-size: 18px;
+}

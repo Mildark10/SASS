@@ -1,0 +1,157 @@
+/* se van a crear varios archivos  => parchars*/
+
+@use'variables';
+@use 'initial';
+
+/* 
+se indica al archivo principal al q no esta con una caracteristicas como 
+_ al inicio */
+
+.main-container {
+    width: 342px;
+    margin: 68px auto;
+    @media (min-width: 600px) {
+        width: 540px;
+    }
+}
+
+.balance {
+    background-color: variables.$Soft-red;
+    height: 100px;
+    border-radius: 16px;
+    padding: 24px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: variables.$Very-pale-orange;
+    margin-bottom: 16px;
+    /* balance title ahora podemos organizar todo sobre el contenedor padre */
+    &__title {
+        font-size: 0.7em;
+        margin-bottom: 6px;
+    }
+    &__total {
+        font-weight: 700;
+        font-size: 1.4em;
+    }
+    &__logo {
+        width: 60px;
+    }
+    @media (min-width: 600px) {
+        height: 126px;
+        &__title {
+            font-size: 1em;
+            margin-bottom: 12px;
+        }
+        &__total {
+            font-size: 1.8em;
+        }
+        &__logo {
+            width: 75px;
+        }
+    }
+}
+
+.chart {
+    background-color: variables.$Very-pale-orange;
+    color: variables.$Medium-brown;
+    border-radius: 16px;
+    height: 424px;
+    padding: 28px 20px;
+    &__title {
+        color: variables.$Dark-browsn;
+        font-size: 1.25em;
+        margin-bottom: 1em;
+    }
+    &__bars-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        margin-bottom: 30px;
+    }
+    &__bar {
+        background-color: variables.$Soft-red;
+        width: 32px;
+        height: 200px;
+        border-radius: 4px;
+        position: relative;
+        &--label {
+            background-color: variables.$Dark-browsn;
+            color: variables.$Very-pale-orange;
+            padding: 4px;
+            width: 38px;
+            font-size: 0.5em;
+            border-radius: 4px;
+            font-weight: 700;
+            position: absolute;
+            top: -24px;
+            left: -2px;
+            display: none;
+        }
+        &--day {
+            position: absolute;
+            bottom: -16px;
+            font-size: 0.6em;
+            width: 32px;
+            text-align: center;
+        }
+        &:hover {
+            filter: brightness(1.2);
+            cursor: pointer;
+        }
+    }
+    &__analitics {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px;
+        font-size: 0.7em;
+        border-top: solid 2px variables.$Cream;
+    }
+    &__total {
+        margin-bottom: 8px;
+    }
+    &__total-value {
+        color: variables.$Dark-browsn;
+        font-weight: 700;
+        font-size: 1.4em;
+    }
+    &__porcentaje {
+        color: variables.$Dark-browsn;
+        font-weight: 700;
+        text-align: right;
+        margin-top: 18px;
+    }
+    @media (min-width: 600px) {
+        height: 512px;
+        padding: 44px;
+        &__title {
+            font-size: 2em;
+        }
+        &__bars-container {
+            margin-bottom: 50px;
+        }
+        &__bars {
+            width: 50px;
+            &--label {
+                width: 54px;
+                font-size: 0.7em;
+                top: -32px;
+                left: 2px;
+            }
+            &--day {
+                width: 54px;
+                bottom: -24px;
+                font-size: 0.8em;
+            }
+        }
+        &__analitics {
+            font-size: 0.9em;
+            padding-top: 32px;
+        }
+        &__total-value {
+            font-size: 2.4em;
+        }
+        &__porcentaje {
+            margin-top: 30px;
+        }
+    }
+}
